@@ -1,0 +1,20 @@
+- name: install gtp5g prerequisite
+  ansible.builtin.apt:
+    pkg:
+      - build-essential
+
+- name: clone gtp5g repo
+  ansible.builtin.git:
+    repo: "{{ gtp5g_repo_url }}"
+    version: "{{ gtp5g_version }}"
+    dest: "{{ gtp5g_clone_path }}"
+    depth: 1
+
+- name: build gtp5g module
+  community.general.make:
+    chdir: "{{ gtp5g_clone_path }}"
+
+- name: install gtp5g module
+  community.general.make:
+    chdir: "{{ gtp5g_clone_path }}"
+    target: install

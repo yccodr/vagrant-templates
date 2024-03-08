@@ -1,0 +1,2 @@
+- include: gtp5g.yml
+- include: free5gc.yml

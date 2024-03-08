@@ -1,0 +1,4 @@
+golang_archive_url: https://go.dev/dl/go{{ golang_version }}.{{ os }}-{{ arch }}.tar.gz
+golang_version: 1.22.1
+os: linux
+arch: amd64

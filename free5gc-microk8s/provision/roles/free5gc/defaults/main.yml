@@ -1,0 +1,7 @@
+gtp5g_repo_url: https://github.com/free5gc/gtp5g.git
+gtp5g_version: v0.8.6
+gtp5g_clone_path: /home/vagrant/gtp5g
+
+free5gc_repo_url: https://github.com/free5gc/gtp5g.git
+free5gc_repo_branch: v0.8.6
+free5gc_clone_path: /home/vagrant/free5gc
