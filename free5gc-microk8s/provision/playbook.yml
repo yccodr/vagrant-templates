@@ -15,6 +15,7 @@
 - hosts: all
   become: true
   roles:
+    - role: "./roles/reboot"
     - role: "./roles/golang"
     - role: "./roles/free5gc"
     - role: "./roles/microk8s"

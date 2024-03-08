@@ -11,3 +11,9 @@
         classic: true
         name:
           - nvim
+
+
+- hosts: all
+  become: true
+  roles:
+    - "./roles/reboot"
