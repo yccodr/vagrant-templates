@@ -17,3 +17,4 @@
   roles:
     - role: "./roles/golang"
     - role: "./roles/free5gc"
+    - role: "./roles/microk8s"
