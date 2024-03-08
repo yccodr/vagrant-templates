@@ -10,6 +10,11 @@
     dest: "{{ gtp5g_clone_path }}"
     depth: 1
 
+- name: cleanup gtp5g module build
+  community.general.make:
+    chdir: "{{ gtp5g_clone_path }}"
+    target: clean
+
 - name: build gtp5g module
   community.general.make:
     chdir: "{{ gtp5g_clone_path }}"
