@@ -3,4 +3,6 @@
     repo: "{{ free5gc_repo_url }}"
     version: "{{ free5gc_repo_branch }}"
     dest: "{{ free5gc_clone_path }}"
+    recursive: true
+  become_user: vagrant
 

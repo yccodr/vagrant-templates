@@ -9,6 +9,7 @@
     version: "{{ gtp5g_version }}"
     dest: "{{ gtp5g_clone_path }}"
     depth: 1
+  become_user: vagrant
 
 - name: cleanup gtp5g module build
   community.general.make:
