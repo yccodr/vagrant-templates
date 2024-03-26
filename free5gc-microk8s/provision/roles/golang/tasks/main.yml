@@ -5,14 +5,14 @@
 
 
 - name: install golang
-  when: not golang_installed
+  when: not golang_installed.stat.exists
   ansible.builtin.unarchive:
     src: "{{ golang_archive_url }}"
     remote_src: true
     dest: /usr/local
 
 - name: add golang bin to PATH
-  when: not golang_installed
+  when: not golang_installed.stat.exists
   ansible.builtin.copy:
     content: 'PATH=$PATH:/usr/local/go/bin'
     dest: /etc/profile.d/go-path.sh
