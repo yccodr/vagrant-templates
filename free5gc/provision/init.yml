@@ -1,0 +1,39 @@
+- hosts: all
+  become: true
+  vars:
+    apt_repo: tw.archive.ubuntu.com
+  tasks:
+    - name: change apt ubuntu repo
+      ansible.builtin.replace:
+        path: /etc/apt/sources.list
+        regexp: '^http:\/\/archive\.ubuntu\.com/gm'
+        replace: "{{ apt_repo }}"
+
+    - name: update and upgrade apt
+      ansible.builtin.apt:
+        upgrade: true
+        update_cache: true
+
+    - name: install nvim
+      community.general.snap:
+        classic: true
+        name:
+          - nvim
+
+- hosts: all
+  roles:
+    - role: "./roles/reboot"
+    - role: "./roles/golang"
+    - role: "./roles/nodejs"
+    - role: "./roles/free5gc"
+
+- hosts: all
+  become: true
+  roles:
+    - role: community.mongodb.mongodb_repository
+    - role: community.mongodb.mongodb_install
+    - role: community.mongodb.mongodb_linux
+    - role: community.mongodb.mongodb_mongod
+      authorization: disabled
+      replicaset: false
+      mongodb_allow_connections_without_certificates: true

@@ -4,5 +4,6 @@
   register: reboot_required
 
 - name: reboot
+  become: true
   reboot:
   when: reboot_required.stat.exists

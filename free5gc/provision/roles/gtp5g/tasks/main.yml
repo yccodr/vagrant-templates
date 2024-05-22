@@ -1,4 +1,5 @@
 - name: install gtp5g prerequisite
+  become: true
   ansible.builtin.apt:
     pkg:
       - build-essential
@@ -20,6 +21,7 @@
     chdir: "{{ gtp5g_clone_path }}"
 
 - name: install gtp5g module
+  become: true
   community.general.make:
     chdir: "{{ gtp5g_clone_path }}"
     target: install
