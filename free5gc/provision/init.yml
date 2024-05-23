@@ -22,7 +22,7 @@
 
 - hosts: all
   roles:
-    - role: "./roles/reboot"
+    # - role: "./roles/reboot"
     - role: "./roles/golang"
     - role: "./roles/nodejs"
     - role: "./roles/free5gc"
