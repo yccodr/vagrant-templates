@@ -2,7 +2,6 @@
 
 ## Prerequisites
 
-- Ansible 2.10 or later
 - Vagrant (tested in 2.4.1)
 - VirtualBox (tested in 7.0)
 
