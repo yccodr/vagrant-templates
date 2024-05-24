@@ -14,11 +14,6 @@
         upgrade: true
         update_cache: true
 
-    - name: install nvim
-      community.general.snap:
-        classic: true
-        name:
-          - nvim
 
 - hosts: all
   roles:
