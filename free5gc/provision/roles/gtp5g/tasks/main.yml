@@ -25,3 +25,7 @@
   community.general.make:
     chdir: "{{ gtp5g_clone_path }}"
     target: install
+
+- name: enable QoS
+  when: enable_qos
+  ansible.builtin.command: echo 1 >  /proc/gtp5g/seq
